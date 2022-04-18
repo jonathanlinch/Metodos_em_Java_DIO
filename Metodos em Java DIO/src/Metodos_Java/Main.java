@@ -15,6 +15,9 @@ public class Main {
                 break;
             case 2:
                 mostrarMensagem();
+                break;
+            case 3:
+                mostrarEmpréstimo();
         }
     }
 
@@ -64,5 +67,19 @@ public class Main {
         hora = entrada.nextInt();
             Mensagens mensagens;
             mensagens = new Mensagens(hora);
+        }
+
+        public static void mostrarEmpréstimo(){
+        double valor;
+        int parcelas;
+        Scanner entradaValor = new Scanner(System.in);
+        Scanner entradaParcelas = new Scanner(System.in);
+        System.out.println("Qual o valor que precisa?");
+        valor = entradaValor.nextDouble();
+        System.out.println("Em quantas vezes?");
+        parcelas = entradaParcelas.nextInt();
+        Emprestimo emprestimo;
+        emprestimo = new Emprestimo(valor, parcelas);
+
         }
 }
