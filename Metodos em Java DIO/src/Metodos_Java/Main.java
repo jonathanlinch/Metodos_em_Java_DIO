@@ -7,7 +7,8 @@ public class Main {
         int inicial;
         System.out.println("1-Calculadora" +
                 "\n2-Mensagens" +
-                "\n3-Empréstimo");
+                "\n3-Empréstimo" +
+                "\n4-Cálculo de área");
         inicial = entradaInicial.nextInt();
         switch (inicial) {
             case 1:
@@ -18,6 +19,8 @@ public class Main {
                 break;
             case 3:
                 mostrarEmpréstimo();
+            case 4:
+                calcularArea();
         }
     }
 
@@ -60,6 +63,7 @@ public class Main {
                     break;
             }
         }
+
         public static void mostrarMensagem(){
         int hora;
         Scanner entrada = new Scanner(System.in);
@@ -80,6 +84,24 @@ public class Main {
         parcelas = entradaParcelas.nextInt();
         Emprestimo emprestimo;
         emprestimo = new Emprestimo(valor, parcelas);
+        }
 
+        public static void calcularArea(){
+            System.out.println("Digite o valor do(s) lado(s):");
+            Scanner entradaLados = new Scanner(System.in);
+            double lado = entradaLados.nextDouble();
+            Area.area(lado);
+            System.out.println("Quadrado: ");
+            lado = entradaLados.nextDouble();
+            double lado1 = entradaLados.nextDouble();
+            Area.area(lado, lado1);
+            System.out.println("Trapézio: ");
+            System.out.println("Base maior: ");
+            lado = entradaLados.nextDouble();
+            System.out.println("Base menor: ");
+            lado1 = entradaLados.nextDouble();
+            System.out.println("Altura: ");
+            double lado2 = entradaLados.nextDouble();
+            Area.area(lado, lado1, lado2);
         }
 }

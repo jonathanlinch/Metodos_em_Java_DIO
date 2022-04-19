@@ -33,6 +33,8 @@ public class Mensagens {
             case 4:
                 mensagemBoaNoite();
                 break;
+             default:
+                 System.out.println("Hora inválida!");
         }
     }
 
