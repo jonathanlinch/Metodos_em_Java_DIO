@@ -3,12 +3,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner entradaInicial = new Scanner(System.in);
         int inicial;
         System.out.println("1-Calculadora" +
                 "\n2-Mensagens" +
                 "\n3-Empréstimo" +
-                "\n4-Cálculo de área");
+                "\n4-Cálculo de área" +
+                "\n5-Entrar com nome");
         inicial = entradaInicial.nextInt();
         switch (inicial) {
             case 1:
@@ -19,8 +21,16 @@ public class Main {
                 break;
             case 3:
                 mostrarEmpréstimo();
+                break;
             case 4:
                 calcularArea();
+                break;
+            case 5:
+                Scanner nome = new Scanner(System.in);
+                String padrao = nome.nextLine();
+                System.out.println(mostrar(padrao));
+            default:
+                System.out.println("Entrada inválida");
         }
     }
 
@@ -61,6 +71,8 @@ public class Main {
                 case 4:
                     Calculadora.dividir(valorA, valorB);
                     break;
+                default:
+                    System.out.println("Entrada inválida");
             }
         }
 
@@ -91,10 +103,12 @@ public class Main {
             Scanner entradaLados = new Scanner(System.in);
             double lado = entradaLados.nextDouble();
             Area.area(lado);
+
             System.out.println("Quadrado: ");
             lado = entradaLados.nextDouble();
             double lado1 = entradaLados.nextDouble();
             Area.area(lado, lado1);
+
             System.out.println("Trapézio: ");
             System.out.println("Base maior: ");
             lado = entradaLados.nextDouble();
@@ -104,4 +118,7 @@ public class Main {
             double lado2 = entradaLados.nextDouble();
             Area.area(lado, lado1, lado2);
         }
+    public static String mostrar(String padrao){
+        return padrao;
+    }
 }
